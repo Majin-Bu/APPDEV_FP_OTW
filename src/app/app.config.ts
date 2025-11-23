@@ -19,4 +19,4 @@ export const appConfig: ApplicationConfig = {
     provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()) 
   ]
-};
+}; 
