@@ -1,0 +1,12 @@
+<div class="container mt-4">
+  <h2>Driver Signup</h2>
+
+  <input type="text" placeholder="Full Name" [(ngModel)]="name" class="form-control mb-2">
+  <input type="email" placeholder="Email" [(ngModel)]="email" class="form-control mb-2">
+  <input type="password" placeholder="Password" [(ngModel)]="password" class="form-control mb-2">
+
+  <input type="text" placeholder="Driver License No." [(ngModel)]="license" class="form-control mb-2">
+  <input type="text" placeholder="Plate Number" [(ngModel)]="plate" class="form-control mb-2">
+
+  <button class="btn btn-primary w-100" (click)="register()">Register Driver</button>
+</div>
