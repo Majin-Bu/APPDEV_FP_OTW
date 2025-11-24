@@ -1,4 +1,5 @@
 <div class="container mt-4">
+<<<<<<< HEAD
   <h2>Admin Dashboard</h2>
   <p>Welcome, Admin!</p>
 
@@ -12,5 +13,65 @@
     <li>Manage alerts and notifications</li>
     <li>Manage route information</li>
   </ul>
+=======
+
+  <!-- SECTION: Pending Drivers -->
+  <h2 class="mb-3">Pending Driver Accounts</h2>
+
+  <div *ngIf="pendingDrivers().length === 0" class="alert alert-info">
+    No pending drivers.
+  </div>
+
+  <div class="card shadow mb-3" *ngFor="let d of pendingDrivers()">
+    <div class="card-body">
+
+      <div class="row">
+        <div class="col-md-8">
+
+          <h4 class="mb-1">{{ d.name }}</h4>
+          <p class="mb-1"><strong>Email:</strong> {{ d.email }}</p>
+          <p class="mb-1"><strong>License No:</strong> {{ d.license }}</p>
+          <p class="mb-1"><strong>Plate Number:</strong> {{ d.plate }}</p>
+
+        </div>
+
+        <div class="col-md-4 text-center">
+          <img 
+            *ngIf="d.licenseImageUrl"
+            [src]="d.licenseImageUrl"
+            alt="License Image"
+            class="img-fluid rounded border mb-2"
+            style="max-height: 160px; object-fit: cover;">
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="text-end mt-3">
+        <button class="btn btn-success me-2" (click)="approve(d)">Approve</button>
+        <button class="btn btn-danger" (click)="decline(d)">Decline</button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <hr class="my-4">
+
+
+  <!-- SECTION: Approved Drivers -->
+  <h2 class="mb-3">Approved Drivers</h2>
+
+  <div *ngIf="approvedDrivers().length === 0" class="alert alert-warning">
+    No approved drivers yet.
+  </div>
+
+  <div class="card shadow mb-3" *ngFor="let d of approvedDrivers()">
+    <div class="card-body">
+      <h4>{{ d.name }}</h4>
+      <p class="mb-1"><strong>Email:</strong> {{ d.email }}</p>
+      <p><strong>Plate Number:</strong> {{ d.plate }}</p>
+    </div>
+  </div>
+>>>>>>> 30b74b6 (SIGNUP and LOGIN (all working), firbase)
 
 </div>

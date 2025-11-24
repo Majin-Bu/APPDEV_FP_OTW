@@ -1,11 +1,20 @@
 <div class="container mt-4">
   <h2>Commuter Signup</h2>
 
+<<<<<<< HEAD
   <input type="text" placeholder="Full Name" [(ngModel)]="name" class="form-control mb-2">
 
   <input type="email" placeholder="Email" [(ngModel)]="email" class="form-control mb-2">
 
   <input type="password" placeholder="Password" [(ngModel)]="password" class="form-control mb-2">
+=======
+  <input 
+    type="text" placeholder="Full Name" [value]="name()" (input)="name.set($any($event.target).value)" class="form-control mb-2">
+
+  <input type="email" placeholder="Email" [value]="email()" (input)="email.set($any($event.target).value)" class="form-control mb-2">
+
+  <input type="password" placeholder="Password" [value]="password()" (input)="password.set($any($event.target).value)" class="form-control mb-2">
+>>>>>>> 30b74b6 (SIGNUP and LOGIN (all working), firbase)
 
   <button class="btn btn-primary w-100" (click)="register()">Create Account</button>
 </div>
