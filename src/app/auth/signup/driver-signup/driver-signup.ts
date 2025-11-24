@@ -1,16 +1,9 @@
 import { Component, signal } from '@angular/core';
-<<<<<<< HEAD
-import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
-import { AuthService } from '../../../services/auth';
-import { Router } from '@angular/router';
-=======
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../services/auth';
 import { Storage, ref, uploadBytes, getDownloadURL } from '@angular/fire/storage';
->>>>>>> 30b74b6 (SIGNUP and LOGIN (all working), firbase)
 
 @Component({
   selector: 'app-driver-signup',
@@ -20,37 +13,13 @@ import { Storage, ref, uploadBytes, getDownloadURL } from '@angular/fire/storage
 })
 export class DriverSignup {
 
-<<<<<<< HEAD
-=======
   // Signals for input fields
->>>>>>> 30b74b6 (SIGNUP and LOGIN (all working), firbase)
   name = signal('');
   email = signal('');
   password = signal('');
   license = signal('');
   plate = signal('');
 
-<<<<<<< HEAD
-  constructor(
-    private authService: AuthService,
-    private router: Router
-  ) {}
-
-  async register() {
-    const userData = {
-      name: this.name(),
-      email: this.email(),
-      role: 'driver',
-      license: this.license(),
-      plate: this.plate(),
-      isActive: false,
-      createdAt: new Date()
-    };
-
-    await this.authService.registerUser(this.email(), this.password(), userData);
-
-    this.router.navigate(['/login']);
-=======
   licenseImageFile: File | null = null;
 
   // Flag for showing validation errors
@@ -119,6 +88,5 @@ export class DriverSignup {
       console.error('Driver Signup Error:', error);
       alert('Error creating account: ' + error.message);
     }
->>>>>>> 30b74b6 (SIGNUP and LOGIN (all working), firbase)
   }
 }
