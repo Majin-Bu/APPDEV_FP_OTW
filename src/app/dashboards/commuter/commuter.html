@@ -1,1 +1,40 @@
-<p>commuter works!</p>
+<div class="dashboard-container">
+
+  <div class="route-card">
+    <h3>{{ route }}</h3>
+    <div class="status">
+      <span class="warning-icon">⚠️</span>
+      <span>{{ delay }}</span>
+      <span>{{ delayTime }}</span>
+    </div>
+
+    <div class="map">
+      <img [src]="mapUrl" alt="Route Map">
+    </div>
+
+    <div class="next-bus">
+      <span>Next Bus</span>
+      <span>{{ nextBusTime }}</span>
+      <span>{{ nextBusDestination }}</span>
+    </div>
+  </div>
+
+  <div class="alerts">
+    <h4>Alerts</h4>
+    <ul>
+      <li *ngFor="let alert of alerts">
+        {{ alert.text }} - {{ alert.time }}
+      </li>
+    </ul>
+  </div>
+
+  <div class="community">
+    <h4>Community</h4>
+    <ul>
+      <li *ngFor="let post of communityPosts">
+        <strong>{{ post.user }}</strong>: {{ post.text }} <span>{{ post.time }}</span>
+      </li>
+    </ul>
+  </div>
+
+</div>

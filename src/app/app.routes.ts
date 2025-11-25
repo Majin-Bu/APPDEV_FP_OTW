@@ -5,11 +5,12 @@ import { Login } from './auth/login/login';
 import { SignupChoice } from './auth/signup/signup-choice/signup-choice';
 import { CommuterSignup } from './auth/signup/commuter-signup/commuter-signup';
 import { DriverSignup } from './auth/signup/driver-signup/driver-signup';
+import { AdminSetup } from './auth/signup/admin-setup/admin-setup'; // 
 
 // DASHBOARD COMPONENTS
 import { Commuter } from './dashboards/commuter/commuter';
-import { Driver } from './dashboards/driver/driver';
-import { Admin } from './dashboards/admin/admin';
+import { Driver } from './dashboards/driver/driver'; 
+import { Admin } from './dashboards/admin/admin'; 
 
 // GUARD
 import { RoleGuard } from './services/role-guard';
@@ -25,6 +26,9 @@ export const routes: Routes = [
       { path: '', component: SignupChoice },
       { path: 'commuter', component: CommuterSignup },
       { path: 'driver', component: DriverSignup },
+
+      // ⭐ ADD THIS ROUTE FOR HARDCODED ADMIN CREATION
+      { path: 'admin', component: AdminSetup }
     ]
   },
 
@@ -53,6 +57,6 @@ export const routes: Routes = [
   // ---------- DEFAULT ----------
   { path: '', redirectTo: 'login', pathMatch: 'full' },
 
-  // ---------- 404 REDIRECT ----------
+  // ---------- 404 ----------
   { path: '**', redirectTo: 'login' }
 ];

@@ -37,4 +37,5 @@ export class AuthService {
 
     return snap.data()['role'];
   }
+  
 }
