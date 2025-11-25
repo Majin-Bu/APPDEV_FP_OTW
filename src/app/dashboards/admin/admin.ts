@@ -1,23 +1,11 @@
-<<<<<<< HEAD
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-=======
 import { Component, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Firestore, collection, query, where, getDocs, doc, updateDoc } from '@angular/fire/firestore';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
->>>>>>> 30b74b6 (SIGNUP and LOGIN (all working), firbase)
 
 @Component({
   selector: 'app-admin-dashboard',
   standalone: true,
-<<<<<<< HEAD
-  imports: [CommonModule],
-  templateUrl: './admin.html'
-})
-export class Admin {
-
-=======
   imports: [CommonModule, HttpClientModule],
   templateUrl: './admin.html'
 })
@@ -115,5 +103,4 @@ export class Admin implements OnInit {
     alert('Driver declined and email sent!');
     await this.loadDrivers();
   }
->>>>>>> 30b74b6 (SIGNUP and LOGIN (all working), firbase)
 }
