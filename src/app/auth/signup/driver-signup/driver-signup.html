@@ -41,17 +41,10 @@
          class="form-control mb-1">
   <small class="text-danger" *ngIf="submitted && !plate()">Plate Number is required.</small>
 
-  <!-- LICENSE IMAGE -->
-  <label class="form-label fw-bold mt-2">Upload Driver License Image</label>
-  <input type="file"
-         (change)="onImageSelected($event)"
-         class="form-control mb-1">
-  <small class="text-danger" *ngIf="submitted && !licenseImageFile">Image upload is required.</small>
-
   <!-- BUTTON -->
   <button class="btn btn-primary w-100 mt-3"
           (click)="register()"
-          [disabled]="!name() || !email() || !password() || !license() || !plate() || !licenseImageFile">
+          [disabled]="!name() || !email() || !password() || !license() || !plate()">
     Register Driver
   </button>
 </div>

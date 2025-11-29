@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from '@angular/fire/auth';
 import { Firestore, doc, setDoc, getDoc } from '@angular/fire/firestore';
+import { inject } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(
-    private auth: Auth,
-    private firestore: Firestore
-  ) {}
+  private auth = inject(Auth);
+  private firestore = inject(Firestore);
+
+  constructor() {}
 
   // -------------------- SIGN UP (GENERAL) --------------------
   async registerUser(email: string, password: string, data: any) {
